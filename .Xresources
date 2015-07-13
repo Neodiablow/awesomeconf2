@@ -1,0 +1,121 @@
+! font settings --------------------------------------------------------------
+
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+!Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #101010
+xscreensaver.Dialog.background:         #D8D8D8
+xscreensaver.Dialog.topShadowColor:     #D8D8D8
+xscreensaver.Dialog.bottomShadowColor:  #D8D8D8
+xscreensaver.Dialog.Button.foreground:  #101010
+xscreensaver.Dialog.Button.background:  #E5E5E5
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #101010
+xscreensaver.Dialog.text.background:    #E5E5E5
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #101010
+xscreensaver.passwd.thermometer.background:  #2E2E2E
+xscreensaver.passwd.thermometer.width:       8
+
+!inlcudes
+!URxvt.perl-lib: ~/.urxvt/perl
+!URxvt.perl-ext-common: default,url-picker,clipboard
+
+!Main
+URxvt*background: #000000
+URxvt*cursorColor: #ffffff
+URxvt*depth: 32
+URxvt*foreground:       #f2f2f2
+URxvt*geometry: 74x27
+!Disable manual encoding with ctrl+shift
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+
+!Fonts
+! Police de base, ni grasse, ni italic
+URxvt.font: xft:DejaVu Sans Mono:size=10
+!URxvt.font: xft:Inconsolata:size=12
+! Sa version grasse qui ne l est pas
+URxvt.boldFont: xft:DejaVu Sans Mono:size=10
+! Sa version grasse-italic qui n'est qu'italique
+URxvt.boldItalicFont: xft:DejaVu Sans Mono:italic:size=10 
+
+
+!Scroll
+URxvt*saveLines:        10000
+URxvt*scrollBar:        false
+!URxvt*termName: xterm
+
+
+!Transparency
+URxvt.inheritPixmap: true
+URxvt.tintColor: #ffffff
+URxvt.shading:20
+
+
+!Bells
+XTerm*bellIsUrgent: true
+URxvt.urgentOnBell: true
+
+!Keys
+URxvt*keysym.End:       \033[8~
+URxvt*keysym.Home:      \033[7~
+
+ 
+!not working
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+!URxvt.keysym.Shift-Control-V: perl:clipboard:paste 
+URxvt.keysym.A-v:   perl:clipboard:paste
+!URxvt.keysym.C-S-c: perl:clipboard:copy
+!URxvt.keysym.C-S-v: perl:clipboard:paste 
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.url-select.launcher:  firefox
+!!!URxvt*font: xft:Monospace:pixelsize=12:antialias=true:hinting=true
+!!!URxvt*boldFont: xft:Monospace:bold:pixelsize=12:antialias=true:hinting=true
+
+!!Colors
+URxvt*color0: #101010
+URxvt*color1: #f13a21
+URxvt*color2: #93f91d
+URxvt*color4: #004f9e
+URxvt*color5: #ec0048
+URxvt*color6: #2aa7e7
+URxvt*color7: #f2f2f2
+URxvt*color8: #1d202f
+URxvt*color9: #ff361e
+URxvt*color10: #ffc005
+URxvt*color11: #93ff00
+URxvt*color12: #0071ff
+URxvt*color13: #ef0051
+URxvt*color14: #4bb8fd
+URxvt*color15: #a020f0
+
+!test alsamixer
+! on donne une position et une taille spécifique à ce terminal
+alsa.geometry: 100x20+50+40
+
+! et on altère une couleur qui n est pas lisible sinon
+alsa.color0: #000000
+alsa.color1: #ff0000
