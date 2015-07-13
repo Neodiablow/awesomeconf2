@@ -15,7 +15,6 @@ ii  alsa-firmware-loaders                 1.0.28-1                            am
 ii  alsa-oss                              1.0.28-1                            amd64        ALSA wrapper for OSS applications
 ii  alsa-utils                            1.0.29-1                            amd64        Utilities for configuring and using ALSA
 ii  alsamixergui                          0.9.0rc2-1-9.1                      amd64        graphical soundcard mixer for ALSA soundcard driver
-ii  ansible                               1.9.2+dfsg-1                        all          Configuration management, deployment, and task execution system
 ii  apache2                               2.4.12-2                            amd64        Apache HTTP Server
 ii  apache2-bin                           2.4.12-2                            amd64        Apache HTTP Server (modules and other binary files)
 ii  apache2-data                          2.4.12-2                            all          Apache HTTP Server (common files)
