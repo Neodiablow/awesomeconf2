@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/etc/cron.daily'
+let g:netrw_dirhist_2='/etc/cron.hourly'
+let g:netrw_dirhist_3='/etc/cron.monthly'
+let g:netrw_dirhist_4='/home/neodiablow/git/pt2015-web/rapports'
+let g:netrw_dirhist_5='/home/neodiablow/git/pt2015-web/rapports/final'
