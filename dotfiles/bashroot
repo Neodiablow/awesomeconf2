@@ -1,11 +1,9 @@
 ###My personal bashrc###
 
 #includes
-
 . /etc/shell/colors.sh
 
 ###HISTORY settings
-
 # donc keep redondant commands into the history
 export HISTCONTROL=ignoredups
 # number of line per session
@@ -13,24 +11,15 @@ export HISTSIZE=10000
 # number of line in the log
 export HISTFILESIZE=200000
 
-
 #My PS1
 PS1="\[$Blue\]<\[$IYellow\]\w\[$Blue\]> \[$Red\]\u\[$White\]@\[$Blue\]\h \[$IBlue\][\$(if [[ \$? == 0 ]]; then echo \"\[$IGreen\]\342\234\223\"; else echo \"\[$IRed\]\342\234\227\"; fi)\[$IBlue\]]~[\[$IYellow\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[$IBlue\]]\n\[$Blue\]>\[$Color_Off\]"
-
-
-
 
 # Creates an archive from given directory
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
-
 ###Aliases
-alias crunchradio='((sleep 2&&mplayer http://localhost:42013 &>/dev/null)&ssh -L 42013:localhost:42013 radio@crunchbanglinux-fr.org -p1636)'
-alias crunchradiov='((sleep 2&&cvlc http://localhost:42013 &>/dev/null)&ssh -L 42013:localhost:42013 radio@crunchbanglinux-fr.org -p1636)'
-alias upall="sudo apt-get update &&sudo apt-get upgrade &&sudo apt-get dist-upgrade &&sudo apt-get autoclean &&sudo apt-get clean &&sudo apt-get autoremove"
-
 alias ls..='ls ..'
 alias cd..='cd ..'
 alias ll='ls --color=auto -lhF'
@@ -63,5 +52,3 @@ shopt -s checkwinsize
         export LESS_TERMCAP_so=$'\E[01;44;33m' # début de la ligne d'état
         export LESS_TERMCAP_ue=$'\E[0m'        # fin
         export LESS_TERMCAP_us=$'\E[01;32m'    # début de souligné
-
-
