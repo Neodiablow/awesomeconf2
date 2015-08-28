@@ -1,11 +1,7 @@
 ###My personal bashrc###
 
 #includes
-
-. /home/$USER/.config/colors/colors.sh
-#source /home/$USER/.config/colors/colors.sh
-#source ~/.todo/todo_completion
-#complete -F _todo todo
+. /$HOME/.config/colors/colors.sh
 
 ###HISTORY settings
 
@@ -15,10 +11,6 @@ export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 # number of line in the log
 export HISTFILESIZE=200000
-#export PATH+=":/usr/local/pgsql/bin/"
-
-#export HTTPS_PROXY="http://www-cache.iutnc.univ-lorraine.fr:3128"
-#export HTTP_PROXY="http://www-cache.iutnc.univ-lorraine.fr:3128"
 
 
 #My PS1
@@ -31,19 +23,16 @@ PS1="\[$IBlue\]┌─[\[$White\]\u@\h\[$IRed\]]\[$IBlue\]─[\$(if [[ \$? == 0 ]
 #PS1="[\t] \[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\$ "
 
 
-#eval `ssh-agent -s`
-#ssh-add .ssh/konachan
-#ssh-add .ssh/id_neodiablow.ws.key
-
-
 aa() { eval `ssh-agent`;} 
 kgaston() { ssh-add /home/neodiablow/.ssh/konarchan_gaston.key;}
 kgit() { ssh-add /home/neodiablow/.ssh/github;}
 kelysia() { ssh-add /home/neodiablow/.ssh/neodiablow_elysia.key;}
 
 
-startDB() { pushd /usr/local/pgsql/bin; su postgres -c "/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l /usr/local/pgsql/data/logfile start"; popd; }
-stopDB() { pushd /usr/local/pgsql/bin; su postgres -c "/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile stop"; popd; }
+#startDB() { pushd /usr/local/pgsql/bin; su postgres -c "/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l /usr/local/pgsql/data/logfile start"; popd; }
+#stopDB() { pushd /usr/local/pgsql/bin; su postgres -c "/usr/local/pgsql/bin/pg_ctl -D /usr/local/pgsql/data -l logfile stop"; popd; }
+#alias connectDB="/usr/local/pgsql/bin/psql"
+
 pdfcli() { pdftohtml -stdout -i $1 | lynx -stdin; }
 
 # Creates an archive from given directory
@@ -52,7 +41,6 @@ mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
 ###Aliases
-alias umounti='sudo udiskie-umount'
 alias crunchradio='((sleep 2&&mplayer http://localhost:42013 &>/dev/null)&ssh -L 42013:localhost:42013 radio@crunchbanglinux-fr.org -p1636)'
 alias crunchradiov='((sleep 2&&cvlc http://localhost:42013 &>/dev/null)&ssh -L 42013:localhost:42013 radio@crunchbanglinux-fr.org -p1636)'
 alias irc='screen -S irc irssi'
@@ -64,7 +52,6 @@ alias ll='ls --color=auto -lhF'
 alias lla='ls --color=auto -lahF'
 alias la='ls --color=auto -a'
 alias llrt='ll -rt'
-eval "`dircolors -b`"
 alias ls='ls --color=auto'
 alias dhclient='sudo dhclient'
 alias grep='grep --color=auto'
@@ -72,8 +59,8 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias df='df -h'
 alias du='du -h'
-alias frequency='history | cut -c8- | sort | uniq -c | sort -rn | head'
-alias frequency2='cat ~/.bash_history | cut -d" " -f1 | perl ~/frequency.pl | sort -rn | head --lines=20'
+alias frequency='history | cut -c8- | sort | uniq -c | sort -rn | head -20'
+eval "`dircolors -b`"
 
 #One letters
 alias h='htop'
@@ -81,19 +68,6 @@ alias p='ping'
 alias s='sudo'
 alias v='vim'
 alias c='clear'
-
-alias todo=~/.todo/todo.sh
-
-alias connectDB="/usr/local/pgsql/bin/psql"
-
-
-## Sudo fixes
-#alias install='sudo apt-get install'
-#alias remove='sudo apt-get remove'
-#alias orphand='sudo deborphan | xargs sudo apt-get -y remove --purge'
-#alias cleanup='sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get clean && sudo apt-get remove && orphand'
-#alias updatedb='sudo updatedb'
-
 
 #Auto completion
 if [ -f /etc/bash_completion ]; then
@@ -103,8 +77,6 @@ fi
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-
 
 # Colored pages in man
         export LESS_TERMCAP_mb=$'\E[01;34m'    # debut de blink !
@@ -134,4 +106,3 @@ export LC_IDENTIFICATION="en_US.UTF8"
 set -o vi
 
 export EDITOR=/usr/bin/vim
-#export PATH="$PATH:/home/neodiablow/.todo"
