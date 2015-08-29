@@ -25,3 +25,4 @@ function copyfiles()
  cp -r $dotfiles/.fonts ~/
 }
 
+
